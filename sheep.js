@@ -4,13 +4,13 @@ var monthsToPrint = 12;
 for (var monthNumber = 1; monthNumber <= monthsToPrint; monthNumber++) {
 
   if (monthNumber % 4 == 0) {
-    var reduction = numSheep * .75;
+    var reduction = numSheep/4;
     console.log("Removing " + reduction + " sheep from the population.");
     numSheep -= reduction;
   }
 
   else if (numSheep > 10000) {
-    var reduction = numSheep * .5;
+    var reduction = numSheep/2;
     console.log("Removing " + reduction + " sheep from the population.");
     numSheep -= reduction;
   }
