@@ -21,18 +21,21 @@ var temps = readline(); // the n temperatures expressed as integers ranging from
 // To debug: printErr('Debug messages...');
 
 var tempSplit = temps.split(' ');
-console.log(tempSplit);
-var closest = 100;
-
-tempSplit.forEach(function (item, index, array) {
-    if(Math.abs(item) < Math.abs(closest)){ 
-       //console.log(item+ " " + closest);
-       closest = parseInt(item);
-   }else if(Math.abs(item) === Math.abs(closest)){
-       if(Math.sign(item) === 1){
+//console.log(tempSplit);
+var closest = 6000;
+if(n >= 1 && tempSplit){
+    tempSplit.forEach(function (item, index, array) {
+        if(Math.abs(item) < Math.abs(closest)){ 
+           //console.log(item+ " " + closest);
            closest = item;
-        }
-   }
-  console.log(item, index, closest);
-});
+       }else if(Math.abs(item) === Math.abs(closest)){
+           if(Math.sign(item) === 1){
+               closest = item;
+            }
+       }
+      //console.log(item, closest);
+    });
+}else{
+    closest = 0;
+}
 print(closest);
